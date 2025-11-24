@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{%block title%} {{block.super}} | media{%endblock title%}
+{%block content%}
+    <h1>MEDIA DI 30 VOTI</h1>
+    <i>media = {{divisione}}</i>
+    {% if media > 6 %}
+        <p style:green><i>La media è maggiore di 6</i></b>
+    {% elif media < 6 %}
+        <p style:red><i>La media è minore di 6</i></b>
+    {% else %}
+        <p><i>La media è di 6 spaccato</i></b>
+    {% endif %}
+{% endblock content%}

@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{%block title%} {{block.super}} | somma{%endblock title%}
+{%block content%}
+    <h1>SOMMA DI DUE NUMERI</h1>
+    <b>var1 = {{ var1 }}</b> <br/>
+    <b>var2 = {{ var2 }}</b> <br/>
+    <b>somma = {{ somma }}</b> <br/>
+    {% if somma <= 0%}
+        <p><i>La somma è negativa: {{ somma }}</i></p>
+    {% else %}
+        <p color:"green"><i>La somma è positiva: {{ somma }}</i></p>
+    {% endif %}
+    {% if var1 == var2%}
+        <p><i>I due numeri sono uguali</i></p>
+    {% endif %}
+{% endblock content%}
