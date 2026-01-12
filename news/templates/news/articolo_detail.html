@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ articolo.titolo }}
+{% endblock title %}
+{% block content %}
+{{ articolo.titolo }}
+{{ articolo.contenuto }}
+Autore: {{ articolo.giornalista }}
+{% endblock content %}
