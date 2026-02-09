@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block title %}
+    Risultati Query
+{% endblock title %}
+{% block content %}
+    <h1 align="center">Risultati della Query</h1>
+    <hr>
+    <h5>Numero totale di articoli: {{ numero_totale_articoli }}</h5>
+    <h5>Numero di articoli scritti dal giornalista con id=3: {{ numero_Articoli_giornalista1 }}</h5>
+    <h5>Articolo più visualizzato: {{ articolo_piu_visualizzato.titolo }} ({{ articolo_piu_visualizzato.visualizzazioni }})</h5>
+    <h5>Giornalista più giovane: {{ giornalista_piu_giovane.nome }} {{ giornalista_piu_giovane.cognome }} ({{ giornalista_piu_giovane.anno_di_nascita }})</h5>
+    <h5>Giornalista più anziano: {{ giornalista_piu_anziano.nome }} {{ giornalista_piu_anziano.cognome }} ({{ giornalista_piu_anziano.anno_di_nascita }})</h5>
+    <hr>
+    <h5>1. Articoli scritti da Rossi:</h5>
+    <ul>
+        {% for art in articoli_cognome %}
+            <li>{{ art.titolo }}</li>
+        {% endfor %}
+    </ul>
+    <h5>2. Articoli senza visualizzazioni:</h5>
+    <ul>
+        {% for art in articoli_senza_visualizzazioni %}
+            <li>{{ art.titolo }}</li>
+        {% endfor %}
+    </ul>
+    <h5>3. Giornalisti nati dopo il 1990:</h5>
+    <ul>
+        {% for g in giornalisti_dopo_data %}
+            <li>{{ g.nome }} {{ g.cognome }}</li>
+        {% endfor %}
+    </ul>
+    <h5>4. Articoli del 01/01/2023:</h5>
+    <ul>
+        {% for art in articoli_data_precisa %}
+            <li>{{ art.titolo }}</li>
+        {% endfor %}
+    </ul>
+    <h5>5. Articoli pubblicati nel 2023 (range):</h5>
+    <ul>
+        {% for art in articoli_intervallo_date %}
+            <li>{{ art.titolo }} - {{ art.data }}</li>
+        {% endfor %}
+    </ul>
+    <h5>6. Articoli scritti da giornalisti nati prima del 1980:</h5>
+    <ul>
+        {% for art in articoli_giornalisti_pre1980 %}
+            <li>{{ art.titolo }} (Autore: {{ art.giornalista.cognome }})</li>
+        {% endfor %}
+    </ul>
+
+    <h5>7. Ultimi 5 articoli pubblicati:</h5>
+    <ul>
+        {% for art in ultimi_5_articoli %}
+            <li>{{ art.titolo }} - {{ art.data }}</li>
+        {% endfor %}
+    </ul>
+
+    <h5>8. Articoli con almeno 100 visualizzazioni:</h5>
+    <ul>
+        {% for art in articoli_minimo_visualizzazioni %}
+            <li>{{ art.titolo }} ({{ art.visualizzazioni }})</li>
+        {% endfor %}
+    </ul>
+
+    <h5>9. Articoli che contengono "importante" nel titolo:</h5>
+    <ul>
+        {% for art in articoli_con_parola_titolo %}
+            <li>{{ art.titolo }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h5>10. Articoli pubblicati a Marzo 2023:</h5>
+    <ul>
+        {% for art in articoli_mese_anno %}
+            <li>{{ art.titolo }} - {{ art.data }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h5>11. Giornalisti con articoli che hanno più di 200 visualizzazioni:</h5>
+    <ul>
+        {% for g in giornalisti_con_articoli_popolari %}
+            <li>{{ g.nome }} {{ g.cognome }}</li>
+        {% endfor %}    
+    </ul>
+    
+    <h5>12. Articoli selezionati con l'AND:</h5>
+    <ul>
+        {% for art in articoli_con_AND %}
+            <li>{{ art.titolo }} - {{ art.data }} ({{ art.visualizzazioni }})</li>
+        {% endfor %}
+    </ul>
+    
+    <h5>13. Articoli selezionati con l'OR:</h5>
+    <ul>
+        {% for art in articoli_con_OR %}
+            <li>{{ art.titolo }} - Autore: {{ art.giornalista.cognome }} ({{ art.giornalista.anno_di_nascita }}) - {{ art.visualizzazioni }} visualizzazioni</li>
+        {% endfor %}
+    </ul>
+    
+    <h5>14. Articoli selezionati con il NOT:</h5>
+    <ul>
+        {% for art in articoli_con_NOT %}
+            <li>{{ art.titolo }} - Autore: {{ art.giornalista.cognome }} ({{ art.giornalista.anno_di_nascita }})</li>
+        {% endfor %}    
+    </ul>
+{% endblock content %}

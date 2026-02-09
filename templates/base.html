@@ -24,7 +24,7 @@
     -->
   </head>
   <body>
-    <nav class="navbar navbar-expand-1g navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -62,6 +62,9 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href = "{% url 'news:homeview'%}">homepage</a>
                 <a class="dropdown-item" href = "{% url 'news:articolo_detail' 1%}">articolo</a>
+                <a class="dropdown-item" href = "{% url 'news:query'%}">query</a>
+                <a class="dropdown-item" href = "{% url 'news:lista_articoli'%}">lista_articoli</a>
+                <a class="dropdown-item" href = "{% url 'news:giornalista_detail' 1%}">lista_giornalisti</a>
             </div>
         </li>
         </ul>
