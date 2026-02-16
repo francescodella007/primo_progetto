@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Media Voti per Studente</h2>
+    <ul>
+        {% for studente, media in medie.items %}
+            <li><strong>{{ studente }}</strong>: {{ media|floatformat:2 }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

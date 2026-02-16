@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Lista materie:</h2>
+    <hr>
+    {% for materia in materie %}
+        <p>{{materia}}</p>
+        <hr>
+    {% endfor %}
+{% endblock content %}

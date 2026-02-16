@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Tutti i Voti</h2>
+
+{% for studente, lista_voti in voti.items %}
+    <h3>Studente: {{ studente }}</h3>
+    <ul>
+        {% for riga in lista_voti %}
+            <li>{{ riga.0 }},{{ riga.1 }},{{ riga.2 }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endfor %}
+{% endblock content %}

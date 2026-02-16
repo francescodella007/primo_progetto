@@ -67,6 +67,15 @@
                 <a class="dropdown-item" href = "{% url 'news:giornalista_detail' 1%}">lista_giornalisti</a>
             </div>
         </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">voti</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href = "{% url 'voti:listematerie'%}">liste materie</a>
+                <a class="dropdown-item" href = "{% url 'voti:maxMinVoti'%}">voti minimi e massimi</a>
+                <a class="dropdown-item" href = "{% url 'voti:mediastudenti'%}">media studenti</a>
+                <a class="dropdown-item" href = "{% url 'voti:votistudenti'%}">voti studenti</a>
+            </div>
+        </li>
         </ul>
     </div>
     </nav>
@@ -81,4 +90,3 @@
     </div>
   </body>
 </html>
-

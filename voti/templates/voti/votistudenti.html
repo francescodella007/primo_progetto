@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Record Voti</h2>
+
+{% for studente, info in risultati.items %}
+    <div>
+        <h3>Studente: {{ studente }}</h3>
+        <ul>
+            <li>
+                <strong>Voto Massimo:</strong> 
+                {{ info.voto_massimo.0 }} con voto {{ info.voto_massimo.1 }}
+            </li>
+            <li>
+                <strong>Voto Minimo:</strong> 
+                {{ info.voto_minimo.0 }} con voto {{ info.voto_minimo.1 }}
+            </li>
+        </ul>
+    </div>
+    <hr>
+{% endfor %}
+{% endblock content %}
