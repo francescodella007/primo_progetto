@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Lista contatti:</h2>
+    <hr>
+    <table style="border-collapse: collapse; border: none;">
+        <thead>
+            <tr>
+                <th style="border: none; padding: 8px; text-align: left;">Cancella</th>
+                <th style="border: none; padding: 8px; text-align: left;">Modifica</th>                
+                <th style="border: none; padding: 8px; text-align: left;">Nome</th>
+                <th style="border: none; padding: 8px; text-align: left;">Cognome</th>
+                <th style="border: none; padding: 8px; text-align: left;">Email</th>
+                <th style="border: none; padding: 8px; text-align: left;">Contenuto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contatto in contatti %}
+            <tr>
+                <td style="border: none; padding: 8px;"><a>Cancella</a></td>
+                <td style="border: none; padding: 8px;"><a>Modifica</a></td>                
+                <td style="border: none; padding: 8px;">{{contatto.nome}}</td>
+                <td style="border: none; padding: 8px;">{{contatto.cognome}}</td>
+                <td style="border: none; padding: 8px;">{{contatto.email}}</td>
+                <td style="border: none; padding: 8px;">{{contatto.contenuto}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
